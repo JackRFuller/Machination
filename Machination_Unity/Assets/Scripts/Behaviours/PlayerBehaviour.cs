@@ -25,12 +25,13 @@ public class PlayerBehaviour : MonoBehaviour {
 
         moveDirection.y -= Gravity * Time.deltaTime;
         PC_Controller.Move(moveDirection * Time.deltaTime);
+
 	}
 
     public void Jump()
     {
         moveDirection.y = JumpStrength;
-        
+		GetComponent<Animation>().Play("Jump");
 
     }
 }

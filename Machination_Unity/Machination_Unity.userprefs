@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Behaviours/ObjectWrapping.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Behaviours/PlayerBehaviour.cs">
     <Files>
-      <File FileName="Assets/Scripts/Behaviours/ObjectWrapping.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Behaviours/ObjectWrapping.cs" Line="67" Column="17" />
+      <File FileName="Assets/Scripts/Behaviours/PlayerBehaviour.cs" Line="34" Column="42" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
