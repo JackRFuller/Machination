@@ -58,7 +58,7 @@ public class ObjectWrapping : MonoBehaviour {
 				}
 				else if(viewportPosition.x < 0)
 				{
-					newPosition.x = MainCamera.ViewportToWorldPoint(Vector2.zero).x;
+					newPosition.x = MainCamera.ViewportToWorldPoint(Vector2.one).x;
 					isWrappingWidth = true;
 				}
 			}
@@ -72,11 +72,13 @@ public class ObjectWrapping : MonoBehaviour {
 				{
 					newPosition.y = MainCamera.ViewportToWorldPoint(Vector2.zero).y;
 					isWrappingHeight = true;
+					Debug.Log(newPosition);
 				}
 				else if(viewportPosition.y < 0)
 				{
-					newPosition.y = MainCamera.ViewportToWorldPoint(Vector2.zero).y;
+					newPosition.y = MainCamera.ViewportToWorldPoint(Vector2.one).y;
 					isWrappingHeight = true;
+					Debug.Log(newPosition);
 				}
 			}
 		}
