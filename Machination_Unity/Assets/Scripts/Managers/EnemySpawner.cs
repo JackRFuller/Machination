@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class EnemySpawner : MonoBehaviour {
 
@@ -8,36 +9,42 @@ public class EnemySpawner : MonoBehaviour {
     [SerializeField] private float SpawnRate;
     [SerializeField] private float MinHeight;
     [SerializeField] private float MaxHeight;
-    [SerializeField] private Vector3 SpawnPosition;
+    [SerializeField] private Vector3 SpawnPosition;    
 
-    private Camera MainCamera;
+    [Header("Object Pooling Attributes")]
+    [SerializeField] private int pooledAmount = 10;
+    List<GameObject> Enemies;
     
 
 	// Use this for initialization
 	void Start () {
 
-        MainCamera = Camera.main;
-        SpawnPosition = new Vector2(15, 0);
-        StartCoroutine(SpawnLocation());
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+        Enemies = new List<GameObject>();
 
-    IEnumerator SpawnLocation()
-    {
-        yield return new WaitForSeconds(SpawnRate);
-        SpawnPosition.y = Random.Range(MinHeight, MaxHeight);
-        SpawnEnemies();
-    }   
+        for (int i = 0; i < pooledAmount; i++)
+        {
+            GameObject SpawnedEnemy = (GameObject)Instantiate(Enemy);
+            SpawnedEnemy.SetActive(false);
+            Enemies.Add(SpawnedEnemy);
+        }
+
+        SpawnPosition = new Vector2(15, 0);
+        InvokeRepeating("SpawnEnemies", SpawnRate, SpawnRate);
+	
+	}
 
     void SpawnEnemies()
     {
-        GameObject EnemyClone;
-        EnemyClone = Instantiate(Enemy, SpawnPosition, Enemy.transform.rotation) as GameObject;
-        StartCoroutine(SpawnLocation());
+        for (int i = 0; i < Enemies.Count; i++)
+        {
+            if (!Enemies[i].activeInHierarchy)
+            {
+                SpawnPosition.y = Random.Range(MinHeight, MaxHeight);
+                Enemies[i].transform.position = SpawnPosition;
+                Enemies[i].transform.rotation = Enemies[i].transform.rotation;
+                Enemies[i].SetActive(true);
+                break;
+            }
+        }
     }
 }

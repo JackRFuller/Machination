@@ -72,7 +72,7 @@ public class ObjectWrapping : MonoBehaviour {
 				{
 					newPosition.y = MainCamera.ViewportToWorldPoint(Vector2.zero).y;
 					isWrappingHeight = true;
-					Debug.Log(newPosition);
+					
 				}
 				else if(viewportPosition.y < 0)
 				{
