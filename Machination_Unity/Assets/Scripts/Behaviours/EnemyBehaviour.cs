@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class EnemyBehaviour : MonoBehaviour {
 
@@ -12,8 +13,10 @@ public class EnemyBehaviour : MonoBehaviour {
     private Vector2 viewportPosition;
     private Vector2 newPosition;
 
+    
+
 	// Use this for initialization
-	void Start () {
+	void Start () {       
 
         MainCamera = Camera.main;
         CC_PC = GetComponent<CharacterController>();
@@ -47,6 +50,13 @@ public class EnemyBehaviour : MonoBehaviour {
 
     void SetInActive()
     {
+        Text Score = gameObject.transform.FindChild("Canvas").FindChild("Score").GetComponent<Text>();
+
+        if (Score.enabled)
+        {
+            Score.enabled = false;
+        }       
+
         gameObject.SetActive(false);
     }
 
