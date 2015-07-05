@@ -51,6 +51,7 @@ public class EnemyBehaviour : MonoBehaviour {
     void SetInActive()
     {
         Text Score = gameObject.transform.FindChild("Canvas").FindChild("Score").GetComponent<Text>();
+        tag = "Untagged";
 
         if (Score.enabled)
         {

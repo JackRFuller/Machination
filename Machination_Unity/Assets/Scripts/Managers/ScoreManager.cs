@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour {
 
+    public int CurrentScore = 0;
     public int Score = 0;
     [SerializeField] private float ScoreRate;
     public bool NewScore = false;    
@@ -23,8 +25,13 @@ public class ScoreManager : MonoBehaviour {
         NewScore = true;       
     }
 
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider obj)
     {
-
+        if (obj.gameObject.tag == "Enemy")
+        {
+            string HitScore = obj.transform.FindChild("Canvas").FindChild("Score").GetComponent<Text>().text;
+            int.TryParse(HitScore,out CurrentScore);
+           
+        }
     }
 }
