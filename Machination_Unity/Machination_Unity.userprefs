@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Behaviours/PlayerBehaviour.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../NonStickRacing/Stick Racing/Assets/Scripts/Managers/MainMenuManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Behaviours/ObjectWrapping.cs" Line="67" Column="17" />
-      <File FileName="Assets/Scripts/Behaviours/PlayerBehaviour.cs" Line="34" Column="42" />
+      <File FileName="../../NonStickRacing/Stick Racing/Assets/Scripts/Managers/MainMenuManager.cs" Line="21" Column="66" />
+      <File FileName="../../NonStickRacing/Stick Racing/Assets/Scripts/Managers/RaceManager.cs" Line="151" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -55,8 +55,7 @@ public class EnemySpawner : MonoBehaviour {
                 {
                     Text Score = Enemies[i].transform.FindChild("Canvas").FindChild("Score").GetComponent<Text>();
                     Score.text = SM_Script.Score.ToString();
-                    Enemies[i].tag = "Enemy";
-                    Debug.Log("Hit");
+                    Enemies[i].tag = "Enemy";                    
 
                     float ScoreYPos = Score.transform.localPosition.y;
 
